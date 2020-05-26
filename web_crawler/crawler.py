@@ -28,7 +28,7 @@ for i in range(scroll_cnt): #scroll_cnt만큼 for문
 #리뷰 컨테이너 찾기
 reviews = driver.find_elements_by_xpath('//*[@jsname="fk8dgd"]//div[@class="d15Mdf bAhLNe"]')
 
-print('There are %d reviews avaliable!' %len(reviews))
+print('There are %d reviews avaliable!' % len(reviews))
 print('Writing the data...')
 
 #pd.DataFrame() : 빈 데이터 프레임 생성
@@ -71,19 +71,19 @@ for review in reviews:
   #append to dataframe
   #df.append() 데이터 프레임에 행을 추가하여 데이터 삽입
   df = df.append({
-    'name':name,
+    'name': name,
     'ratings': ratings,
     'date': date,
     'helpful': helpful,
-    'comment':comment,
+    'comment': comment,
     'developer_comment': developer_comment
   }, ignore_index=True)
 
-  #scv 파일로 데이터프레임 저장
-  filename = datetime.now().strftime('result/%Y-%m-%d_%H-%M-%S.csv')
-  #df.to_csv() csv파일로 저장
-  df.to_csv(filename, encoding='utf-8-sig', index=False)
-  driver.stop_client() #selenium클라이언트 종료
-  driver.close() #드라이버 종료
+#scv 파일로 데이터프레임 저장
+filename = datetime.now().strftime('result/%Y-%m-%d_%H-%M-%S.csv')
+#df.to_csv() csv파일로 저장
+df.to_csv(filename, encoding='utf-8-sig', index=False)
+driver.stop_client() #selenium클라이언트 종료
+driver.close() #드라이버 종료
 
-  print('Done!')
+print('Done!')
