@@ -2,7 +2,7 @@ from selenium import webdriver #웹페이지를 자동으로 테스트할 때 �
 from bs4 import BeautifulSoup #HTML 파싱 패키지
 import time, os
 from datetime import datetime
-import pandas as pd
+import pandas as pd #데이터 구조 및 조작 제공 
 
 link = 'https://play.google.com/store/apps/details?id=com.miso&hl=ko&showAllReviews=true' #원하는 페이지의 링크
 
