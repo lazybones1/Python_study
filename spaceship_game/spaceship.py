@@ -44,7 +44,7 @@ class Spaceship(pygame.sprite.Sprite):
     def collide(self, sprites):
         for sprite in sprites:
             if pygame.sprite.collide_rect(self, sprite):
-                return sprites
+                return sprite
 
 class Rock(pygame.sprite.Sprite):
     def __init__(self, xpos, ypos, hspeed, vspeed):
