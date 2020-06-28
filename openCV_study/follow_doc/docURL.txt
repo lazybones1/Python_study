@@ -1,0 +1,1 @@
+https://opencv-python.readthedocs.io/en/latest/
