@@ -9,8 +9,8 @@ from imutils import face_utils
 from math import atan2, degrees
 import dlib
 
-detector = dlib.cnn_face_detection_model_v1('./models/bearface_network.dat')
-predictor = dlib.shape_predictor('./models/landmarkDetector.dat')
+#detector = dlib.cnn_face_detection_model_v1('./models/bearface_network.dat')
+#predictor = dlib.shape_predictor('./models/landmarkDetector.dat')
 
 img = dlib.load_rgb_image('img/05.jpg')
 img_result = cv2.cvtColor(img.copy(), cv2.COLOR_RGB2RGBA)
