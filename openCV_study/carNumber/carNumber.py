@@ -239,15 +239,17 @@ for i, plate_img in enumerate(plate_imgs):
             if c.isdigit():
                 has_digit = True
             result_chars += c
-
+    """
     print(result_chars)
+    """
     plate_chars.append(result_chars)
 
     if has_digit and len(result_chars) > longest_text:
         longest_idx = i
-
+    """
     plt.subplot(len(plate_imgs), 1, i+1)
     plt.imshow(img_result, cmap='gray')
+    """
 
 info = plate_infos[longest_idx]
 chars = plate_chars[longest_idx]
@@ -262,5 +264,4 @@ cv2.imwrite(chars + '.jpg', img_out)
 
 plt.figure(figsize=(12, 10))
 plt.imshow(img_out)
-
 plt.show()
