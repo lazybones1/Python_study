@@ -6,7 +6,7 @@ show_img = np.copy(img)
 
 mouse_pressed = False
 y = x = w = h = 0
-
+#1
 def mouse_callback(event, _x, _y, flags, param):
     global show_img, x, y, w, h, mouse_pressed
 
@@ -50,6 +50,7 @@ cv2.destroyAllWindows()
 label = cv2.GC_BGD
 lbl_clrs = {cv2.GC_BGD: (0,0,0), cv2.GC_FGD: (255,255,255)}
 
+#2
 def mouse_callback(event, x, y, flags, param):
     global mouse_pressed
 
@@ -66,11 +67,16 @@ def mouse_callback(event, x, y, flags, param):
     elif event == cv2.EVENT_LBUTTONUP:
         mouse_pressed = False
 
+#3
 cv2.namedWindow('image')
 cv2.setMouseCallback('image', mouse_callback)
 
+cv2.namedWindow('labels')
+cv2.setMouseCallback('labels', mouse_callback)
+
 while True:
     cv2.imshow('image', show_img)
+    cv2.imshow('labels', labels)
     k = cv2.waitKey(1)
 
     if k == ord('a') and not mouse_pressed:
@@ -85,6 +91,8 @@ labels, bgdModel, fgdModel = cv2.grabCut(img, labels, None, bgdModel, fgdModel, 
 show_img = np.copy(img)
 show_img[(labels == cv2.GC_PR_BGD)|(labels == cv2.GC_BGD)] //= 3
 
+#4
 cv2.imshow('image', show_img)
+cv2.imshow('labels', labels)
 cv2.waitKey()
 cv2.destroyAllWindows()
