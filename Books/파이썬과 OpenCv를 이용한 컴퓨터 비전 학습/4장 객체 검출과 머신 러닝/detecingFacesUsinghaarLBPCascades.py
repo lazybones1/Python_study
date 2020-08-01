@@ -28,7 +28,7 @@ def detect_faces(video_file, detector, win_title):
 
 haar_face_cascade = cv2.CascadeClassifier('../data/haarcascade_frontface.xml')
 
-detect_faces(0, haar_face_cascade, 'Haar cascade face detector')
+detect_faces('../data/faces.mp4', haar_face_cascade, 'Haar cascade face detector')
 
 lbp_face_cascade = cv2.CascadeClassifier('../data/lbpcascade_frontalface.xml')
 """
